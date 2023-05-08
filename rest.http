@@ -1,0 +1,21 @@
+### Create VA
+POST http://localhost:3000/v1/payment/va
+Content-Type: application/json
+
+{
+    "amount" : 10000000,
+    "bankCode" : "BCA",
+    "name" : "Rizki Fitra Rahman"
+}
+
+
+### Get VA
+GET http://localhost:3000/v1/payment/va?id=6459298ebf0805cdd26fd8d3
+
+### Simulate payment
+POST http://localhost:3000/v1/payment/va/test?id=6459298ebf0805cdd26fd8d3
+Content-Type: application/json
+
+{
+    "amount" : 10000000
+}
