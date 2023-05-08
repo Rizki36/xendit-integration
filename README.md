@@ -31,5 +31,6 @@ Simple payment integration with xendit
 - Copy ngrok url
 - Go to Callback Url 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/39044004/236891405-97f78bc9-e53c-458e-b12d-845bbc38b16e.png">
+
 - FVA paid : replace_with_ngrok_url/v1/payment/va/callback-paid
 - FVA created : replace_with_ngrok_url/v1/payment/va/callback-created
