@@ -1,5 +1,5 @@
 ### Create VA
-POST http://localhost:3000/v1/payment/va/one
+POST http://localhost:3000/v1/payment/va
 Content-Type: application/json
 
 {
@@ -9,8 +9,11 @@ Content-Type: application/json
 }
 
 
+### Get Transactions
+GET http://localhost:3000/v1/payment/transaction
+
 ### Get VA
-GET http://localhost:3000/v1/payment/va?id=6459298ebf0805cdd26fd8d3
+GET http://localhost:3000/v1/payment/va/one?id=6459298ebf0805cdd26fd8d3
 
 ### Simulate payment
 POST http://localhost:3000/v1/payment/va/test?id=6459298ebf0805cdd26fd8d3

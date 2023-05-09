@@ -11,10 +11,11 @@ datasource db {
 }
 
 model Transaction {
-  id               String  @id @default(uuid())
-  status           String
-  amount           Int
-  bankCode         String
-  name             String
-  virtualAccountID String?
+  id                   String  @id @default(uuid())
+  status               String
+  amount               Int
+  bankCode             String
+  name                 String
+  virtualAccountID     String?
+  virtualAccountNumber String?
 }

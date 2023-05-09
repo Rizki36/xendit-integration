@@ -1,6 +1,6 @@
 import xendit from "xendit-node";
 import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 import axios from "axios";
 
 const x = new xendit({
@@ -57,6 +57,27 @@ export const getVaController = async (req: Request, res: Response) => {
   }
 };
 
+export const getTransactionController = async (req: Request, res: Response) => {
+  try {
+    let where: Prisma.TransactionWhereInput = {};
+
+    // get one transaction
+    if (req.query.id) {
+      where = {
+        id: req.query.id as string,
+      };
+    }
+
+    const transactions = await prisma.transaction.findMany({
+      where,
+    });
+
+    res.json(transactions);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 /**
  * Callback for created or updated status
  */
@@ -74,6 +95,7 @@ export const callbackVaCreatedController = async (
       data: {
         status: req.body.status,
         virtualAccountID: req.body.id,
+        virtualAccountNumber: req.body.account_number,
       },
     });
 
