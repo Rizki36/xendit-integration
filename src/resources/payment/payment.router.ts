@@ -7,6 +7,8 @@ import {
   getVaController,
   testVaPaymentController,
 } from "./payment.controller";
+import { validation } from "../../utils";
+import { createVaSchema } from "./payment.validation";
 
 const router = Router();
 
@@ -14,7 +16,7 @@ const router = Router();
 router.get("/transaction", getTransactionController);
 router.get("/va/one", getVaController);
 router.post("/va/test", testVaPaymentController);
-router.post("/va", createVaController);
+router.post("/va", validation(createVaSchema), createVaController);
 router.post("/va/callback-created", callbackVaCreatedController);
 router.post("/va/callback-paid", callbackVaPaidController);
 
