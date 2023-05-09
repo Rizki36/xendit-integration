@@ -167,3 +167,17 @@ export const testVaPaymentController = async (req: Request, res: Response) => {
     }
   }
 };
+
+export const getAvailableBanksController = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const va = new x.VirtualAcc({});
+    const resp = await va.getVABanks();
+
+    res.json(resp);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};

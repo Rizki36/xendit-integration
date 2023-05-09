@@ -3,6 +3,7 @@ import {
   callbackVaCreatedController,
   callbackVaPaidController,
   createVaController,
+  getAvailableBanksController,
   getTransactionController,
   getVaController,
   testVaPaymentController,
@@ -15,6 +16,7 @@ const router = Router();
 // TODO: add validation and verifyToken middleware
 router.get("/transaction", getTransactionController);
 router.get("/va/one", getVaController);
+router.get("/va/banks", getAvailableBanksController);
 router.post("/va/test", testVaPaymentController);
 router.post("/va", validation(createVaSchema), createVaController);
 router.post("/va/callback-created", callbackVaCreatedController);
