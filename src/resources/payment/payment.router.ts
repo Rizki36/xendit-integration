@@ -10,7 +10,7 @@ import {
 const router = Router();
 
 // TODO: add validation and verifyToken middleware
-router.get("/va", getVaController);
+router.get("/va/one", getVaController);
 router.post("/va/test", testVaPaymentController);
 router.post("/va", createVaController);
 router.post("/va/callback-created", callbackVaCreatedController);

@@ -1,5 +1,5 @@
 ### Create VA
-POST http://localhost:3000/v1/payment/va
+POST http://localhost:3000/v1/payment/va/one
 Content-Type: application/json
 
 {
